@@ -1,13 +1,20 @@
 <script setup>
-  import { RouterLink } from 'vue-router';
+  import { RouterLink, useRouter } from 'vue-router';
+
+  // Get all routes, filter to those designated as main navigation items.
+  const router = useRouter();
+  const navRoutes = router.getRoutes()
+    .filter((i) => !!i?.meta?.mainNav);
 </script>
 
 <template>
   <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/profile">Profile</RouterLink>
-    <RouterLink to="/projects">Projects</RouterLink>
-    <RouterLink to="/contact">Contact</RouterLink>
+    <RouterLink
+      v-for="route in navRoutes"
+      :to="route.path"
+    >
+      {{ route.name }}
+    </RouterLink>
   </nav>
 </template>
 
