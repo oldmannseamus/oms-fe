@@ -1,10 +1,20 @@
 <script setup>
-  import Header from "./Header.vue"; 
-  import Footer from "./Footer.vue";
+  import { ref, watch } from 'vue';
+  import { useRoute } from 'vue-router';
+  import Header from './Header.vue'; 
+  import Footer from './Footer.vue';
+
+  const route = useRoute();
+  const isHome = ref();
+
+  watch(
+    () => route.name,
+    () => { isHome.value = route.name === 'home' },
+  );
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout" :class="{home: isHome}">
     <header>
       <slot name="header">
         <Header />
@@ -24,6 +34,7 @@
 <style scoped>
   .layout {
     padding: 2rem;
+    transition: grid-template-columns 0.45s ease-in-out;
   }
 
   header {
@@ -35,9 +46,13 @@
     .layout {
       display: grid;
       grid-template:
-        "a b" auto
-        "c c" auto / 1fr 1fr;
+        "a b b b" auto
+        "c c c c" auto / 1fr 3fr;
       padding: 0 2rem;
+
+      &.home {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     header {
@@ -45,7 +60,6 @@
       display: flex;
       place-items: center;
       padding-right: calc(var(--section-gap) / 2);
-
     }
 
     .wrapper {
