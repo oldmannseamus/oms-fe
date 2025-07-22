@@ -1,20 +1,20 @@
 :root {
   --oms-white: #f8f8f8;
   --oms-black: #282828;
-
-  --oms-indigo: #2c3e50;
   
   --oms-green-light: #30A56C;
   --oms-green: #038C67;
   --oms-green-dark: #0B474A;
   --oms-gray: #3B5150;
+  --oms-copper: #9C5221;
+  --oms-bronze: #393121;
 
   --oms-divider-light-1: rgba(60, 60, 60, 0.29);
   --oms-divider-light-2: rgba(60, 60, 60, 0.12);
   --oms-divider-dark-1: rgba(84, 84, 84, 0.65);
   --oms-divider-dark-2: rgba(84, 84, 84, 0.48);
 
-  --oms-text-light-1: var(--oms-indigo);
+  --oms-text-light-1: var(--oms-gray);
   --oms-text-light-2: rgba(60, 60, 60, 0.66);
   --oms-text-dark-1: var(--oms-white);
   --oms-text-dark-2: rgba(235, 235, 235, 0.64);
