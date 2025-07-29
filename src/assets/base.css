@@ -1,5 +1,5 @@
 :root {
-  --oms-white: #f8f8f8;
+  --oms-white: #FCFBFA;
   --oms-black: #282828;
   
   --oms-green-light: #30A56C;
@@ -22,32 +22,36 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--oms-white);
+  --color-background: var(--oms-black);
 
-  --color-border: var(--oms-divider-light-2);
-  --color-border-hover: var(--oms-divider-light-1);
-
-  --color-heading: var(--oms-text-light-1);
-  --color-text: var(--oms-text-light-1);
+  --color-border: var(--oms-bronze);
+  --color-border-hover: var(--oms-divider-dark-1);
 
   --color-link-highlight: var(--oms-green);
-  --color-link-hover: var(--oms-green-dark);
+  --color-link-hover: var(--oms-green-light);
+
+  --color-heading: var(--oms-text-dark-1);
+  --color-text: var(--oms-text-dark-2);
+
+  --gradient-glow: var(--oms-green-dark);
   
   --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-background: var(--oms-black);
+    --color-background: var(--oms-white);
 
-    --color-border: var(--oms-divider-dark-2);
-    --color-border-hover: var(--oms-divider-dark-1);
+    --color-border: var(--oms-divider-light-2);
+    --color-border-hover: var(--oms-divider-light-1);
+
+    --color-heading: var(--oms-text-light-1);
+    --color-text: var(--oms-text-light-1);
 
     --color-link-highlight: var(--oms-green);
-    --color-link-hover: var(--oms-green-light);
+    --color-link-hover: var(--oms-green-dark);
 
-    --color-heading: var(--oms-text-dark-1);
-    --color-text: var(--oms-text-dark-2);
+    --gradient-glow: var(--oms-green);
   }
 }
 
